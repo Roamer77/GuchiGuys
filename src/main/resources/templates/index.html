@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>E-Store made[In]Slow[Mo]</title>
+    <meta charset="utf-8">
+
+    <!-- Linking styles -->
+    <link rel="stylesheet" href="/css/reset.css" >
+    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/nivo-slider.css" >
+
+    <!-- Linking scripts -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/getAjax.js"></script>
+    <script type="text/javascript" src="/js/getProductsByCategory.js"></script>
+    <script type="text/javascript" src="/js/ajaxSearch.js"></script>
+    <script type="text/javascript" src="/js/accordion.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+        <header><!-- Defining the header section of the page -->
+
+            <nav><!-- Defining the navigation menu -->
+                <ul>
+                    <li class="selected"><a href="#">Главная</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Все продукты</a></li>
+                    <li><a href="#">Связаться с нами</a></li>
+                    <li><a href="#">О нас</a></li>
+                </ul>
+            </nav>
+            <button class="loginButton" type="button" onclick="location.href='http://127.0.0.1:8089/login'">Войти</button> <!--Кастыль потом исправить-->
+            <button class="CartButton" type="button" onclick="location.href='http://127.0.0.1:8089/cart/yourCart'">Корзина</button>
+                <b id="ProductCounter">Товаров в корзине 0</b>
+            <button class="OrderButton" type="button" onclick="location.href='http://127.0.0.1:8089/admin/ListOfOrders'">Заказы</button>
+            <button class="registrationButton" type="button" onclick="location.href='http://127.0.0.1:8089/main/regPage '">Регистрация</button>
+            <div class="top_head"><!-- Defining the top head element -->
+
+                <section id="search"><!-- Search form -->
+                    <form action="#" onsubmit="return false;" method="get">
+                        <input class="searchLine" type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Поиск..'" value="Поиск.." name="q">
+                        <button class="searchBtn" type="button">Поиск </button>
+                    </form>
+
+                    <ul id="social"><!-- Social profiles links -->
+                        <li><a href="#" title="facebook" rel="external nofollow"><img alt="" src="/images/facebook.png"></a></li>
+                        <li><a href="#" title="twitter" rel="external nofollow"><img alt="" src="/images/twitter.png"></a></li>
+                        <li><a href="#" title="linkedin" rel="external nofollow"><img alt="" src="/images/linkedin.png"></a></li>
+                        <li><a href="#" title="rss" rel="external nofollow"><img alt="" src="/images/rss.png"></a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <section id="submenu"><!-- Defining the sub menu -->
+                <ul>
+                    <li><a href="#" class="tvCategory">Телевизоры</a></li>
+                    <li><a href="#" class="laptopCategory">Ноутбуки</a></li>
+                    <li><a href="#">Категория  #3</a></li>
+                    <li><a href="#">Категория #4</a></li>
+                    <li><a href="#">Категория #5</a></li>
+                    <li><a href="#">Категория #6</a></li>
+                </ul>
+            </section>
+
+        </header>
+
+        <div id="slider"><!-- Defining the main content section -->
+
+        <!-- Promo slider -->
+            <section id="slider-wrapper">
+                <div id="slider" class="nivoSlider">
+                    <img style="display: none;" src="/images/promo1.jpg" alt="" title="#htmlcaption-1">
+                    <img style="display: none;" src="/images/promo2.jpg" alt="" title="#htmlcaption-2">
+                    <img style="display: none;" src="/images/promo3.jpg" alt="" title="#htmlcaption-3">
+                </div>
+                <div id="htmlcaption-1" class="nivo-html-caption">
+                    <h5 class="p2">Добро пожаловать в E-Shop</h5>
+                    <p>Тут вы можите купить различную медиатехнику </p>
+                </div>
+                <div id="htmlcaption-1" class="nivo-html-caption">
+                    <h5 class="p2">Зона скидок</h5>
+                    <p></p>
+                </div>
+                <div id="htmlcaption-2" class="nivo-html-caption">
+                    <h5 class="p2">Where you can add any feature products</h5>
+                    <p>Put any description here</p>
+                </div>
+                <div id="htmlcaption-3" class="nivo-html-caption">
+                    <h5 class="p2">Or something else</h5>
+                    <p>Put any description here</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="main"><!-- Defining submain content section -->
+            <section id="content"><!-- Defining the content section #2 -->
+                <div id="left">
+                    <h3>Продукты</h3>
+                    <li id="first"  class="first">
+                        <div class="img"><a href="#"><img id="picture"  alt="" src="/images/post1.jpg"></a></div>
+                        <div class="info">
+                            <a class="title" href="#">Продукт 1</a>
+                            <p class="description">Описание товара </p>
+                            <div class="price">
+                                <span class="st">Цена: <strong>$550.00</strong></span>
+                            </div>
+                            <div class="actions">
+                                <button type="button" class="details-button"> Подробнее </button>
+                                <button class="AddToCartBtn"> Добавить в корзину</button>
+                                <input  type="hidden" class="productId"></input>
+                            </div>
+                        </div>
+                    </li>
+                    <ul id="productList">
+
+                    </ul>
+                    <div id="loadMoreBtn">
+                        <input   type="button" value="Ещё" class="loadBtn">
+                    </div>
+                </div>
+                <div id="right">
+                    <h3>Лидеры продаж</h3>
+                    <ul>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post6.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 7</a>
+                                <div class="price">
+                                    <span class="usual">$600.00 </span>&nbsp;
+                                    <span class="special">$500.00</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post5.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 8</a>
+                                <div class="price">
+                                    <span class="usual">$500.00 </span>&nbsp;
+                                    <span class="special">$400.00</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post4.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 9</a>
+                                <div class="price">
+                                    <span class="usual">$700.00 </span>&nbsp;
+                                    <span class="special">$600.25</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post3.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 10</a>
+                                <div class="price">
+                                    <span class="usual">$805.00 </span>&nbsp;
+                                    <span class="special">$714.25</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post2.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 11</a>
+                                <div class="price">
+                                    <span class="usual">$1205.00 </span>&nbsp;
+                                    <span class="special">$1000.25</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="#"><img alt="" src="/images/post1.jpg"></a></div>
+                            <div class="info">
+                                <a class="title" href="#">Продукт 12</a>
+                                <div class="price">
+                                    <span class="usual">$200.00 </span>&nbsp;
+                                    <span class="special">$190.25</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+
+    <footer><!-- Defining the footer section of the page -->
+        <div id="privacy">
+            E-Store Val Made[in]Slow[M]o
+        </div>
+    </footer>
+
+</div>
+
+</body></html>

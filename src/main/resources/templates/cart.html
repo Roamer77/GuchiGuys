@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина </title>
+    <link rel="stylesheet" href="/css/reset.css" >
+    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet " href="/css/cartStyle.css">
+    <link rel=" stylesheet" href="/css/popupStyle.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="/js/js_CartInfo.js"></script>
+    <script type="text/javascript" src="/js/makeOrder.js"></script>
+    <script type="text/javascript" src="/js/getAjax.js"></script>
+    <script type="text/javascript" src="/js/accordion.js"></script>
+</head>
+<body>
+    <b>Корзина </b>
+    <div id ="secret"> <li id="first"  class="first">
+        <div class="img"><a href="#"><img id="picture"  alt="" src="/images/post1.jpg"></a></div>
+        <div class="info">
+            <a class="title" href="#">Продукт 1</a>
+            <p class="description">Описание товара </p>
+            <div class="price">
+                <span class="st">Цена: <strong>$550.00</strong></span>
+            </div>
+            <div class="actions">
+                <button type="button" class="details-button"> Описание</button>
+                <button class="popup-open" >Оформить заказ</button>
+                <button class="deleteFromCart">Удаить из корзины </button>
+                <input  type="hidden" class="productId"></input>
+                <b class="productsInCart">Товаров в корзине:</b>
+            </div>
+        </div>
+    </li>
+        <!--кнопка с оформлением заказа и появляющейся формой -->
+        <div class="popup-fade">
+            <div class="popup">
+                <a class="popup-close" href="#">Закрыть</a>
+                <p> Оформление заказа </p>
+                <input type="text" name="Username" value="" placeholder="Имя">
+                <input type="text" name="UserSecondName" value="" placeholder="Фамилия">
+                <input type="text" name="UserAddress" value="" placeholder="Адрес">
+                <input type="number" name="ProductCounter" value="" placeholder="Количество товаров">
+                <input type="submit" name="submitBtn" value="Оформить заказ" id="submitBtn" >
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
